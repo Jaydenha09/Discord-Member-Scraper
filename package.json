@@ -1,0 +1,11 @@
+{
+	"name": "discordidscraper",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js"
+	},
+	"dependencies": {
+		"readline-sync": "^1.4.10",
+		"ws": "^8.9.0"
+	}
+}
