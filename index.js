@@ -29,7 +29,7 @@ function connect() {
 		const channelsObj = {};
 
 		channelsObj[channelId] = [
-			[index, index + 99],
+			[0, 99],
 			[index + 100, index + 199],
 		];
 		send({
@@ -92,6 +92,7 @@ function connect() {
 			reqMembers();
 		} else if (obj.t == 'GUILD_MEMBER_LIST_UPDATE') {
 			let found = 0;
+			let foundItems = false;
 
 			const ops = obj.d.ops;
 			for (const op of ops) {
@@ -108,14 +109,13 @@ function connect() {
 							users.push(userId);
 						}
 					}
-				} catch {
-					console.log(items);
-				}
+					foundItems = true;
+				} catch {}
 
 				saveUsers();
 			}
 
-			if (found == 0) {
+			if (found == 0 && ops.length > 0 && foundItems) {
 				saveUsers();
 				console.log('Retrieved all ' + users.length + ' members.');
 				process.exit();
