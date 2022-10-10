@@ -2,6 +2,8 @@
 Very simple and easy to use Discord member scraper\
 Allows you to download all user ids from a Discord server
 
+I'm accepting commissions [Contact me](https://ghaph.com/contact)
+
 ## Setup
 1. Make sure you have node js installed
 2. Clone the repository
